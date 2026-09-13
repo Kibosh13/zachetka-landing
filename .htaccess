@@ -1,0 +1,24 @@
+# Правила для хостинга Beget (Apache). GitHub Pages этот файл игнорирует.
+RewriteEngine On
+
+# www → без www
+RewriteCond %{HTTP_HOST} ^www\.uchebnyisovetnik\.ru$ [NC]
+RewriteRule ^(.*)$ https://uchebnyisovetnik.ru/$1 [R=301,L]
+
+# http → https. За nginx Beget признак защищённого соединения приходит
+# в X-Forwarded-Proto, поэтому проверяем оба варианта — иначе редирект зациклится.
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^(.*)$ https://uchebnyisovetnik.ru/$1 [R=301,L]
+
+# Статика меняется редко и версионируется именем файла — держим её в кэше браузера
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  # сервер отдаёт шрифты как application/font-woff2, поэтому нужны оба типа
+  ExpiresByType font/woff2 "access plus 365 days"
+  ExpiresByType application/font-woff2 "access plus 365 days"
+</IfModule>
