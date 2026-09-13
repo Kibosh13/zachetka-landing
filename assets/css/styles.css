@@ -14,23 +14,26 @@
   --line: rgba(12, 16, 36, .09);
   --line-strong: rgba(12, 16, 36, .14);
 
-  /* цвета из логотипа */
+  /* цвета из логотипа: тёмно-синий, бирюзовый, золото */
   --logo-navy: #123c6b;
   --logo-teal: #11888f;
   --logo-gold: #deb159;
 
-  --brand: #4f46e5;
-  --brand-600: #4338ca;
-  --brand-soft: rgba(79, 70, 229, .1);
-  --cyan: #0ea5e9;
-  --violet: #8b5cf6;
-  --amber: #f59e0b;
+  --brand: #123c6b;
+  --brand-600: #0d2c50;
+  --brand-soft: rgba(18, 60, 107, .1);
+  --teal: #11888f;
+  --cyan: #239da9;
+  --gold: #c9922f;
   --green: #10b981;
 
-  --grad: linear-gradient(100deg, #4f46e5, #8b5cf6 45%, #0ea5e9);
+  /* синий переходит в бирюзу — как в эмблеме; тёмная половина больше, а
+     бирюза на конце на полтона глуше логотипной, чтобы белый текст кнопок
+     проходил по контрасту (4.65 против 4.25 у чистого --logo-teal) */
+  --grad: linear-gradient(100deg, #123c6b, #17607f 52%, #108188);
   --shadow-sm: 0 1px 2px rgba(12, 16, 36, .05), 0 4px 14px -6px rgba(12, 16, 36, .1);
   --shadow: 0 2px 4px rgba(12, 16, 36, .04), 0 18px 40px -18px rgba(12, 16, 36, .18);
-  --shadow-lg: 0 30px 70px -30px rgba(35, 25, 120, .35);
+  --shadow-lg: 0 30px 70px -30px rgba(10, 40, 70, .34);
 
   --r-sm: 10px;
   --r: 16px;
@@ -121,6 +124,10 @@ h3 { font-size: 1.18rem; letter-spacing: -.02em; }
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* На тёмных плашках основной градиент почти сливается с фоном, поэтому там
+   берём его светлую версию. Именно background-image, а не background:
+   шорткат сбросил бы background-clip: text и текст залился бы плашкой. */
+.order-copy .grad { background-image: linear-gradient(100deg, #eaf7f9, #a8dbe1 45%, #5cc0cc); }
 
 /* ---------- SCROLL PROGRESS ---------- */
 .scroll-progress {
@@ -130,7 +137,7 @@ h3 { font-size: 1.18rem; letter-spacing: -.02em; }
 .scroll-progress span {
   display: block; height: 100%; width: 0%;
   background: var(--grad);
-  box-shadow: 0 0 14px rgba(79, 70, 229, .6);
+  box-shadow: 0 0 14px rgba(17, 136, 143, .55);
 }
 
 /* ---------- HEADER ---------- */
@@ -199,9 +206,9 @@ h3 { font-size: 1.18rem; letter-spacing: -.02em; }
 .btn-primary {
   background: var(--grad); color: #fff;
   background-size: 160% 100%;
-  box-shadow: 0 10px 26px -12px rgba(79, 70, 229, .85);
+  box-shadow: 0 10px 26px -12px rgba(18, 60, 107, .55);
 }
-.btn-primary:hover { transform: translateY(-2px); background-position: 100% 0; box-shadow: 0 18px 40px -16px rgba(79, 70, 229, .9); }
+.btn-primary:hover { transform: translateY(-2px); background-position: 100% 0; box-shadow: 0 18px 40px -16px rgba(18, 60, 107, .62); }
 .btn-primary:active { transform: translateY(0); }
 
 .btn-ghost { border: 1px solid var(--line-strong); color: var(--ink); background: var(--bg-2); }
@@ -217,9 +224,10 @@ h3 { font-size: 1.18rem; letter-spacing: -.02em; }
   top: -30%; left: 50%; transform: translateX(-50%);
   width: 160vw; height: 130%;
   background:
-    radial-gradient(26% 30% at 36% 46%, rgba(79, 70, 229, .26), transparent 70%),
-    radial-gradient(24% 28% at 60% 38%, rgba(14, 165, 233, .2), transparent 70%),
-    radial-gradient(20% 26% at 48% 64%, rgba(139, 92, 246, .18), transparent 70%);
+    radial-gradient(26% 30% at 36% 46%, rgba(18, 60, 107, .18), transparent 70%),
+    radial-gradient(24% 28% at 60% 38%, rgba(35, 157, 169, .22), transparent 70%),
+    radial-gradient(20% 26% at 48% 64%, rgba(17, 136, 143, .16), transparent 70%),
+    radial-gradient(18% 20% at 64% 58%, rgba(222, 177, 89, .14), transparent 70%);
   animation: drift 20s ease-in-out infinite alternate;
 }
 @keyframes drift {
@@ -315,7 +323,7 @@ h3 { font-size: 1.18rem; letter-spacing: -.02em; }
 .fc-avatar {
   width: 38px; height: 38px; flex: none; border-radius: 12px;
   display: grid; place-items: center; color: #fff; font-weight: 800;
-  background: linear-gradient(140deg, var(--violet), var(--cyan));
+  background: linear-gradient(140deg, var(--teal), var(--cyan));
 }
 
 @keyframes floaty {
@@ -368,12 +376,12 @@ h3 { font-size: 1.18rem; letter-spacing: -.02em; }
   color: #fff; position: relative; z-index: 1;
 }
 .card-ico svg { width: 25px; height: 25px; }
-.ico-1 { background: linear-gradient(140deg, #4f46e5, #7c73ff); }
-.ico-2 { background: linear-gradient(140deg, #0ea5e9, #22d3ee); }
-.ico-3 { background: linear-gradient(140deg, #8b5cf6, #c084fc); }
-.ico-4 { background: linear-gradient(140deg, #f59e0b, #fbbf24); }
-.ico-5 { background: linear-gradient(140deg, #10b981, #34d399); }
-.ico-6 { background: linear-gradient(140deg, #ec4899, #f472b6); }
+.ico-1 { background: linear-gradient(140deg, #123c6b, #21598f); }
+.ico-2 { background: linear-gradient(140deg, #1a6ca8, #2e92cf); }
+.ico-3 { background: linear-gradient(140deg, #11888f, #1fa9ad); }
+.ico-4 { background: linear-gradient(140deg, #c9922f, #e3b95f); }
+.ico-5 { background: linear-gradient(140deg, #0e9070, #26b98d); }
+.ico-6 { background: linear-gradient(140deg, #0f5f78, #1c8aa6); }
 
 .card h3 { margin-bottom: 10px; position: relative; z-index: 1; }
 .card p { color: var(--ink-2); font-size: .96rem; margin-bottom: 18px; position: relative; z-index: 1; }
@@ -423,7 +431,7 @@ h3 { font-size: 1.18rem; letter-spacing: -.02em; }
 .tab:hover { color: var(--ink); border-color: var(--brand); }
 .tab.is-active {
   background: var(--grad); color: #fff; border-color: transparent;
-  box-shadow: 0 10px 24px -12px rgba(79, 70, 229, .8);
+  box-shadow: 0 10px 24px -12px rgba(18, 60, 107, .5);
 }
 
 .price-panel { display: none; animation: fadeUp .45s var(--ease); }
@@ -535,21 +543,21 @@ input.is-invalid { border-color: #ef4444; }
 
 .calc-result {
   padding: clamp(24px, 3.4vw, 40px);
-  background: linear-gradient(165deg, #171b32, #0c0f1f);
+  background: linear-gradient(165deg, #0f2a47, #071526);
   color: #fff; display: flex; flex-direction: column;
   position: relative; overflow: hidden;
 }
 .calc-result::before {
   content: ''; position: absolute; top: -140px; right: -110px;
   width: 320px; height: 320px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 115, 255, .55), transparent 65%);
+  background: radial-gradient(circle, rgba(35, 157, 169, .5), transparent 65%);
   filter: blur(10px);
 }
 .cr-label { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .55); position: relative; }
 .cr-sum {
   font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-weight: 800; letter-spacing: -.04em;
   margin: 10px 0 6px; position: relative;
-  background: linear-gradient(100deg, #fff, #c7d2fe 60%, #7dd3fc);
+  background: linear-gradient(100deg, #fff, #cfe7ea 60%, #8ecfd8);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   font-variant-numeric: tabular-nums;
 }
@@ -629,16 +637,16 @@ input.is-invalid { border-color: #ef4444; }
 }
 .order-copy {
   padding: clamp(30px, 4vw, 52px);
-  background: linear-gradient(165deg, #1a1f3a, #0a0d1c);
+  background: linear-gradient(165deg, #13324f, #081627);
   color: #fff; position: relative; overflow: hidden;
 }
 .order-copy::before {
   content: ''; position: absolute; bottom: -160px; left: -120px;
   width: 380px; height: 380px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(14, 165, 233, .4), transparent 65%);
+  background: radial-gradient(circle, rgba(35, 157, 169, .42), transparent 65%);
 }
 .order-copy > * { position: relative; }
-.order-copy .eyebrow { color: #9aa4ff; }
+.order-copy .eyebrow { color: #8fd0d6; }
 .order-copy h2 { margin-bottom: 16px; }
 .order-copy > p { color: rgba(255, 255, 255, .65); margin-bottom: 32px; }
 
@@ -660,7 +668,7 @@ input.is-invalid { border-color: #ef4444; }
   transition: .22s var(--ease);
 }
 .oc-item:hover { background: rgba(255, 255, 255, .11); transform: translateY(-2px); }
-.oc-item svg { width: 21px; height: 21px; flex: none; color: #9aa4ff; }
+.oc-item svg { width: 21px; height: 21px; flex: none; color: #8fd0d6; }
 .oc-item b { display: block; font-size: .93rem; }
 .oc-item span { font-size: .85rem; color: rgba(255, 255, 255, .55); }
 
@@ -704,7 +712,6 @@ input.is-invalid { border-color: #ef4444; }
 }
 .f-legal dt { color: var(--ink-3); }
 .f-legal dd { color: var(--ink-2); font-weight: 600; font-variant-numeric: tabular-nums; }
-.f-legal .fl-note { margin-top: 12px; font-size: .84rem; color: var(--ink-3); }
 .f-nav a, .f-contacts a:not(.btn) { font-size: .95rem; font-weight: 600; color: var(--ink-2); transition: color .2s; width: fit-content; }
 .f-nav a:hover, .f-contacts a:not(.btn):hover { color: var(--brand); }
 .f-contacts .btn { margin-top: 6px; width: fit-content; }
