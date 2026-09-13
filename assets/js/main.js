@@ -291,7 +291,7 @@ function initForm() {
     // Без бэкенда: открываем почтовый клиент с заполненным письмом.
     // Подключение CRM/Telegram-бота — заменить этот блок на fetch().
     window.location.href =
-      `mailto:hello@zachetka.ru?subject=${encodeURIComponent('Заявка с сайта — ' + name.value.trim())}&body=${encodeURIComponent(body)}`;
+      `mailto:ekatpod89@gmail.com?subject=${encodeURIComponent('Заявка с сайта — ' + name.value.trim())}&body=${encodeURIComponent(body)}`;
 
     form.querySelectorAll('.of-grid, .check-agree, button[type="submit"]').forEach((el) => { el.hidden = true; });
     success.hidden = false;
