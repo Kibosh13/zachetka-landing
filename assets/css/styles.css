@@ -1,5 +1,5 @@
 /* =========================================================
-   Зачётка — лендинг учебных работ
+   Учебный Советник — лендинг учебных работ
    Дизайн-система: токены, компоненты, секции
    ========================================================= */
 
@@ -164,7 +164,9 @@ h3 { font-size: 1.18rem; letter-spacing: -.02em; }
 .nav a.is-active { color: var(--brand); background: var(--brand-soft); }
 .nav .nav-cta { display: none; }
 
-.header-actions { display: flex; align-items: center; gap: 10px; }
+/* margin-left: auto прижимает блок вправо, когда навигация уходит
+   в мобильное меню (position: fixed) и перестаёт растягивать строку */
+.header-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
 
 .burger { display: none; width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--line); }
 .burger span {

@@ -18,32 +18,32 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <circle cx="950" cy="120" r="380" fill="url(#glow)"/>
 
-  <g transform="translate(80 78)">
+  <g transform="translate(80 74)">
     <rect width="56" height="56" rx="17" fill="url(#accent)"/>
     <g transform="translate(6 6) scale(1.4)" fill="none" stroke="#0b0f20">
       <path d="M4 11.5 16 5l12 6.5-12 6.5-12-6.5Z" fill="#0b0f20" stroke="none"/>
       <path d="M9 15v6.2c0 .6.3 1.1.8 1.4 4.1 2.4 8.3 2.4 12.4 0 .5-.3.8-.8.8-1.4V15" stroke-width="2.6" stroke-linecap="round"/>
     </g>
-    <text x="72" y="38" fill="#fff" font-family="Manrope, Arial, sans-serif" font-size="30" font-weight="800" letter-spacing="-1">0GQB:0</text>
+    <text x="72" y="38" fill="#fff" font-family="Manrope, Arial, sans-serif" font-size="29" font-weight="800" letter-spacing="-.8">Учебный Советник</text>
   </g>
 
-  <text x="80" y="300" fill="#fff" font-family="Manrope, Arial, sans-serif" font-size="66" font-weight="800" letter-spacing="-2.6">><>305< ABC45=B0<</text>
-  <text x="80" y="378" fill="url(#accent)" font-family="Manrope, Arial, sans-serif" font-size="66" font-weight="800" letter-spacing="-2.6">A?@02;OBLAO A =03@C7:>9</text>
+  <text x="80" y="296" fill="#fff" font-family="Manrope, Arial, sans-serif" font-size="62" font-weight="800" letter-spacing="-2.4">Помогаем студентам</text>
+  <text x="80" y="370" fill="url(#accent)" font-family="Manrope, Arial, sans-serif" font-size="62" font-weight="800" letter-spacing="-2.4">справляться с нагрузкой</text>
 
-  <text x="80" y="448" fill="#a8b0cc" font-family="Manrope, Arial, sans-serif" font-size="27" font-weight="500"> 5D5@0BK � :>=B@>;L=K5 � :C@A>2K5 �   � 48AA5@B0F88</text>
+  <text x="80" y="440" fill="#a8b0cc" font-family="Manrope, Arial, sans-serif" font-size="26" font-weight="500">Рефераты · контрольные · курсовые · ВКР · диссертации</text>
 
-  <g font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="700">
-    <g transform="translate(80 500)">
-      <rect width="290" height="56" rx="28" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.16)"/>
-      <text x="26" y="35" fill="#fff">14 4=59 ?@02>: 15A?;0B=></text>
+  <g font-family="Manrope, Arial, sans-serif" font-size="21" font-weight="700">
+    <g transform="translate(80 496)">
+      <rect width="292" height="54" rx="27" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.16)"/>
+      <text x="26" y="34" fill="#fff">14 дней правок бесплатно</text>
     </g>
-    <g transform="translate(390 500)">
-      <rect width="250" height="56" rx="28" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.16)"/>
-      <text x="26" y="35" fill="#fff">@838=0;L=>ABL 60%+</text>
+    <g transform="translate(392 496)">
+      <rect width="252" height="54" rx="27" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.16)"/>
+      <text x="26" y="34" fill="#fff">Оригинальность 60%+</text>
     </g>
-    <g transform="translate(660 500)">
-      <rect width="230" height="56" rx="28" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.16)"/>
-      <text x="26" y="35" fill="#fff">!@>G=>  70 ACB:8</text>
+    <g transform="translate(664 496)">
+      <rect width="226" height="54" rx="27" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.16)"/>
+      <text x="26" y="34" fill="#fff">Срочно — за сутки</text>
     </g>
   </g>
 </svg>
