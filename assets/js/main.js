@@ -319,10 +319,12 @@ function initNav() {
     }
   });
 
-  const links = [...document.querySelectorAll('.nav a:not(.nav-cta)')];
-  const sections = links
-    .map((a) => document.querySelector(a.getAttribute('href')))
-    .filter(Boolean);
+  // На странице договора меню ведёт на index.html#..., такие ссылки в подсветке
+  // не участвуют — отбираем только якоря текущей страницы
+  const anchors = [...document.querySelectorAll('.nav a:not(.nav-cta), .doc-toc a')]
+    .filter((a) => a.getAttribute('href').startsWith('#'))
+    .map((link) => ({ link, target: document.querySelector(link.getAttribute('href')) }))
+    .filter((a) => a.target);
 
   let raf = null;
   const onScroll = () => {
@@ -337,8 +339,8 @@ function initNav() {
 
       const mid = y + window.innerHeight * 0.32;
       let active = -1;
-      sections.forEach((s, i) => { if (s.offsetTop <= mid) active = i; });
-      links.forEach((a, i) => a.classList.toggle('is-active', i === active));
+      anchors.forEach((a, i) => { if (a.target.offsetTop <= mid) active = i; });
+      anchors.forEach((a, i) => a.link.classList.toggle('is-active', i === active));
 
       raf = null;
     });
@@ -404,6 +406,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
+
+  document.getElementById('docPrint')?.addEventListener('click', () => window.print());
+
+  // Оглавление договора: на десктопе всегда раскрыто, на мобильных — свёрнуто,
+  // иначе десять пунктов занимают экран целиком
+  const toc = document.getElementById('docToc');
+  if (toc && window.matchMedia('(max-width: 960px)').matches) toc.open = false;
 
   const deadline = document.getElementById('fDeadline');
   if (deadline) deadline.min = new Date().toISOString().slice(0, 10);

@@ -25,7 +25,8 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fonts.css">
-<link rel="stylesheet" href="assets/css/styles.css">
+<!-- ?v= сбрасывает недельный кэш из .htaccess: меняем при правке стилей и скрипта -->
+<link rel="stylesheet" href="assets/css/styles.css?v=2">
 </head>
 <body>
 
@@ -254,6 +255,7 @@
     <p class="price-note reveal">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.8v.01"/></svg>
       Цены указаны как ориентир. Точную сумму называем после знакомства с заданием — и больше она не меняется.
+      Официальный прайс-лист — <a href="oferta.html#pril">приложение №1 к договору-оферте</a>.
     </p>
   </div>
 </section>
@@ -365,6 +367,11 @@
       </details>
 
       <details class="faq-item reveal">
+        <summary>Работаете по договору?<span class="chev" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>Да. Услуги оказываются по публичному договору-оферте — его полный текст вместе с прайс-листом (приложение №1) опубликован на сайте. Акцептом договора считается оплата услуг, подписывать бумаги отдельно не нужно. <a href="oferta.html">Читать договор-оферту</a>.</p></div>
+      </details>
+
+      <details class="faq-item reveal">
         <summary>Какую оригинальность вы гарантируете?<span class="chev" aria-hidden="true"></span></summary>
         <div class="faq-body"><p>При необходимости — от 60%. Если методичка требует больше, поднимаем по согласованию. Отчёт о проверке прикладываем к готовой работе.</p></div>
       </details>
@@ -451,7 +458,7 @@
 
         <label class="check check-agree">
           <input type="checkbox" id="fAgree" required><span class="box"></span>
-          Согласен на обработку персональных данных
+          <span>Согласен с условиями <a href="oferta.html" target="_blank" rel="noopener">договора-оферты</a> и на обработку персональных данных</span>
         </label>
         <span class="err" data-for="fAgree"></span>
 
@@ -506,6 +513,7 @@
         <dt>ОГРНИП</dt><dd>326510000026871</dd>
         <dt>Регион</dt><dd>Мурманская область</dd>
       </dl>
+      <a class="fl-doc" href="oferta.html">Договор-оферта</a>
     </div>
   </div>
 
@@ -519,6 +527,6 @@
   <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15V5M6 9l4-4 4 4"/></svg>
 </a>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=2"></script>
 </body>
 </html>
